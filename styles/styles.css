@@ -1,0 +1,12 @@
+* Universal Styles */
+html {
+    font-family: 'Delicious Handrawn', cursive;
+    font-size: 16px;
+}
+
+.main-content {
+    position: relative;
+    /* top: 8rem; To offset for fixed header. */
+    overflow: auto;
+    background-color: #29524A;
+}
