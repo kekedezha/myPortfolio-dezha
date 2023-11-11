@@ -1,12 +1,166 @@
-* Universal Styles */
+/* FONT IMPORTS */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Proza+Libre:wght@700&display=swap");
+
+/* UNIVERSAL STYLES */
 html {
-    font-family: 'Delicious Handrawn', cursive;
-    font-size: 16px;
+    scroll-behavior: smooth;
 }
 
-.main-content {
-    position: relative;
-    /* top: 8rem; To offset for fixed header. */
-    overflow: auto;
-    background-color: #29524A;
+html, 
+body {
+    height: 100%;
+    color: #323232;
 }
+
+h1 {
+    font-family: "Proza Libre", sans-serif;
+    margin: 0;
+    margin-bottom: 0.75em;
+    font-size: 2em;
+}
+
+h2 {
+    font-family: "Proza Libre", sans-serif;
+    margin: 0;
+    margin-bottom: 0.75em;
+    font-size: 1.5em;
+}
+
+/* BODY */
+body {
+    font-family: "Open Sans", sans-serif;
+    margin: 0 auto;
+    padding: 0 1em;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    padding: 1em 0;
+}
+
+/* HEADER-NAVIGATION */
+#logo {
+    margin: 0;
+    flex: 1;
+  }
+
+header {
+    display: flex;
+    padding: 4em 0;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+header nav{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+a {
+    color: #323232;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+ul .nav-items {
+    justify-self: right;
+}
+
+.nav-items {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    justify-content: right;
+    align-items: center;
+    margin: 0 0 0 auto;
+}
+
+.nav-item {
+    margin: 0.5em;
+}
+
+/* ABOUT ME */
+.moment {
+    width: 300px;
+    height: 80%;
+    padding-top: 2em;
+    flex-shrink: 0;
+}
+  
+.about-me-container {
+    display: flex;
+}
+  
+.about-me-text-container {
+    margin-right: 1em;
+    line-height: 1.4;
+}
+
+.about-me-text-container ul {
+    padding-left: 3em;
+}
+.about-me-text-container li {
+    padding-top: 1em;
+    list-style: disc;
+}
+
+/* PROJECTS */
+#projects {
+    line-height: 1.4;
+
+}
+
+.project {
+    padding-bottom: 1em;
+}
+
+.project-image {
+    width: 50%;
+  }
+  
+.project-title h3 {
+    display: inline;
+}
+
+details {
+    cursor: pointer;
+}
+
+summary {
+    list-style-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/right-arrow.svg);
+}
+
+.project-description {
+    padding-left: 2em;
+}
+/* Skills & Certifications */
+.skills-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+  
+.skills-container > * {
+    font-size: 2em;
+    width: 2em;
+    margin-top: 0.5em;
+}
+/* EXPERIENCE */
+
+/* CONTACT */
+#contact p {
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    font-weight: bolder;
+    padding-bottom: 1em;
+}
+/* FOOTER */
+footer {
+    margin-top: auto;
+    padding: 0.75em 0;
+    text-align: center;
+}
+  
