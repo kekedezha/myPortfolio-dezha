@@ -175,7 +175,12 @@ summary {
     padding-left: 2em;
 }
 /* EXPERIENCE */
-
+#experience {
+    line-height: 1.4;
+}
+#experience p {
+    padding-left: 2em;
+}
 /* CONTACT */
 #contact p {
     font-family: "Open Sans", sans-serif;
