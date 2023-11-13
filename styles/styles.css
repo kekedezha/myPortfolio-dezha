@@ -26,6 +26,10 @@ h2 {
     font-size: 1.5em;
 }
 
+.ital {
+    font-style: italic;
+}
+
 /* BODY */
 body {
     font-family: "Open Sans", sans-serif;
@@ -109,7 +113,6 @@ ul .nav-items {
 /* PROJECTS */
 #projects {
     line-height: 1.4;
-
 }
 
 .project {
@@ -117,6 +120,7 @@ ul .nav-items {
 }
 
 .project-image {
+    padding-left: 2em;
     padding-top: 0.5em;
     width: 50%;
   }
@@ -148,6 +152,27 @@ summary {
     font-size: 2em;
     width: 2em;
     margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+.certification {
+    padding-bottom: 1em;
+    line-height: 1.6;
+}
+
+.cert-data {
+    padding-left: 2em;
+    padding-top: 0.5em;
+    width: 50%;
+    height: 500px;
+  }
+  
+.cert-title h3 {
+    display: inline;
+}
+
+.cert-description {
+    padding-left: 2em;
 }
 /* EXPERIENCE */
 
