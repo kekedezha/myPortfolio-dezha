@@ -1,1 +1,14 @@
-Temp text for README file.
+# Christian Dezha Portfolio
+
+This is the source code for my portfolio website! I built this to showcase my skills and what I've been working on!
+
+## Built with:
+
++ HTML
++ CSS
++ JS
++ [Font Awesome] (https://fontawesome.com/)
+
+## Webpage
+
+You can visit the website by going here: ....link not available yet... :(
