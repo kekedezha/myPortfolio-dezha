@@ -2,7 +2,8 @@
 const words = "C H R I S T I A N D E Z H A ' S P O R T F O L I O";
 
 const ANIMATION_DURATION = 2000; //ms
-const SET_INTERVAL_DURATION = 5000; //ms
+
+//document element selectors
 const headerComponent = document.querySelector("header");
 const welcomeDiv = document.querySelector(".welcome");
 const portfolioNameDiv = document.querySelector(".portfolio-name");
@@ -12,6 +13,12 @@ const skillsSection = document.getElementById("skills-certifications");
 const experienceSection = document.getElementById("experience")
 const contactSection = document.getElementById("contact");
 const footerSection = document.querySelector("footer");
+const giftFairyWebsiteButton = document.querySelector(".giftfairy-website-button");
+const giftFairyGithubButton = document.querySelector(".giftfairy-github-button");
+const jammingGithubButton = document.querySelector(".jamming-github-button");
+const trhWebsiteButton = document.querySelector(".trh-website-button");
+const trhGithubButton = document.querySelector(".trh-github-button");
+
 
 //Function to separate each character into it's own div
 const characters = words.split("").forEach((char, i) => {
@@ -28,12 +35,13 @@ const characters = words.split("").forEach((char, i) => {
 });
 
 
-
+//Interval set up to display "welcome" message for 3 seconds on page load/reload
 const interval1 = setInterval(() => {
     welcomeDiv.classList.add("fade-out-text");
     clearInterval(interval1);
 }, 3000);
 
+//Interval to hide welcome message and display rest of page
 const interval2 = setInterval(() => {
     welcomeDiv.style.display = "none";
     headerComponent.style.display = "flex";
@@ -48,3 +56,29 @@ const interval2 = setInterval(() => {
     headerComponent.classList.add("fade-in-text");
     clearInterval(interval2);
 }, 5000);
+
+const gfGoToWebsite = () => {
+    window.open("https://giftfairy.netlify.app/", "_blank");
+}
+
+const gfGoToGithub = () => {
+    window.open("https://github.com/kekedezha/GiftFairy-FE", "_blank");
+}
+
+const jammingGoToGithub = () => {
+    window.open("https://github.com/kekedezha/jamming_pp", "_blank");
+}
+
+const trhGoToWebsite = () => {
+    window.open("https://trhfilms.netlify.app/", "_blank");
+}
+
+const trhGoToGithub = () => {
+    window.open("https://github.com/kekedezha/TRHFilms", "_blank");
+}
+
+giftFairyWebsiteButton.onclick = gfGoToWebsite;
+giftFairyGithubButton.onclick = gfGoToGithub;
+jammingGithubButton.onclick = jammingGoToGithub;
+trhWebsiteButton.onclick = trhGoToWebsite;
+trhGithubButton.onclick = trhGoToGithub;

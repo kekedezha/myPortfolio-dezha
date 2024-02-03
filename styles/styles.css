@@ -64,18 +64,25 @@
     } 
   }
 
-  @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
+@keyframes fadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
 
-  @keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { 
-        opacity: 0; 
-        display: none;
-    }
-  }
+@keyframes fadeOut {
+0% { opacity: 1; }
+100% { 
+    opacity: 0; 
+    display: none;
+}
+}
+
+@keyframes scale {
+to {
+    transform:
+        scale(calc(1.1 - calc(0.1 * var(--reverse-index))));
+}
+}
 
 /* UNIVERSAL STYLES */
 html {
@@ -253,21 +260,24 @@ main {
 #projects {
     display: none;
     line-height: 1.4;
+    margin: 0 auto 15em auto;
+    text-align: center;
+}
+
+#projects h2 {
+    text-align: right;
+    margin-bottom: 0;
 }
 
 .project {
     padding-bottom: 1em;
 }
-
-.project-image {
-    padding-left: 2em;
-    padding-top: 0.5em;
-    width: 50%;
-  }
   
-.project-title h3 {
+#projects h3 {
     display: inline;
-    font-size: 1.25em;
+    font-weight: bold;
+    font-size: 2.5em;
+    color:gold;
 }
 
 details {
@@ -281,7 +291,114 @@ summary {
 .project-description {
     padding-left: 2em;
 }
+#project-cards {
+	--numCards: 3;
+    --card-height: 50vh;
+    --card-margin: 4vw;
+    --card-top-offset: 1em;
+    --outline-width: 0px;
+	view-timeline-name: --cards-element-scrolls-in-body;
+    list-style: none;
+    outline: calc(var(--outline-width) * 10) solid hotpink;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(var(--numCards), var(--card-height));
+    gap: var(--card-margin);
+    padding-bottom: calc(var(--numCards) * var(--card-top-offset));
+    margin-bottom: var(--card-margin);
+}
+.project-card {
+    --card-top-offset: 3em;
+    --outline-width: 0px;
+	--index0: calc(var(--index) - 1); /* 0-based index */
+	--reverse-index: calc(var(--numCards) - var(--index0)); /* reverse index */
+	--reverse-index0: calc(var(--reverse-index) - 1); /* 0-based reverse index */
+    outline: var(--outline-width) solid lime;
+    position: sticky;
+    top: 0;
+    padding-top: calc(var(--index) * var(--card-top-offset));
+}
 
+.card-content {
+    --outline-width: 0px;
+    box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.1), 0 1em 2em rgba(0, 0, 0, 0.1);
+    background: rgb(255, 255, 255);
+    color: rgb(10, 5, 7);
+    border-radius: 1em;
+    overflow: hidden;
+    display: grid;
+    grid-template-areas: "text img";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    align-items: stretch;
+    outline: var(--outline-width) solid blue;
+    transform-origin: 50% 0%;
+    will-change: transform;
+}
+
+.card-content {
+    --index0: calc(var(--index) - 1); /* 0-based index */
+	--start-range: calc(var(--index0) / var(--numCards) * 100%);
+	--end-range: calc((var(--index)) / var(--numCards) * 100%);
+
+	animation: linear scale forwards;
+	animation-timeline: --cards-element-scrolls-in-body;
+	animation-range: exit-crossing var(--start-range) exit-crossing var(--end-range);
+}
+
+.card-content > div {
+    display: grid;
+    grid-area: text;
+    width: 80%;
+    place-self: center;
+    text-align: left;
+    gap: 1em;
+    place-items: start;
+}
+
+.card-content > figure {
+    grid-area: img;
+    overflow: hidden;
+    height: 450px;
+}
+
+.card-content > figure > img {
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+}
+
+.card-content button {
+    border: 1px solid white;
+    border-radius: 20px;
+    background-color: red;
+    font-size: 1em;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    color: white;
+}
+
+.card-content button:hover {
+    border: 2px solid black;
+}
+
+#card-1 {
+    --index: 1
+}
+
+#card-2 {
+    --index: 2
+}
+
+#card-3 {
+    --index: 3
+}
+
+.giftFairyImg {
+    width: 300px;
+    height: 70%;
+    flex-shrink: 0;
+}
 /* BODY - MAIN -> skills & certifications */
 #skills-certifications {
     display: none;
@@ -333,6 +450,10 @@ summary {
 #experience {
     display: none;
     line-height: 1.8;
+}
+
+#experience h2 {
+    text-align: right;
 }
 
 #experience h3 {
