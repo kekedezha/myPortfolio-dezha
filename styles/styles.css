@@ -115,7 +115,7 @@ p {
 
 section {
     padding: 1em 0;
-    margin-bottom: 3em;
+    margin-bottom: 3.5em;
 }
 
 section:first-child {
@@ -321,6 +321,10 @@ summary {
     padding-left: 2em;
 }
 
+.cert-description a {
+    font-size: 1em;
+}
+
 .cert-description i:hover {
     color: blueviolet;
 }
@@ -328,7 +332,7 @@ summary {
 /* BODY - MAIN -> experience */
 #experience {
     display: none;
-    line-height: 1.4;
+    line-height: 1.8;
 }
 
 #experience h3 {
