@@ -1,99 +1,235 @@
 /* FONT IMPORTS */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Proza+Libre:wght@700&display=swap");
 
-/* UNIVERSAL STYLES */
-html {
-    scroll-behavior: smooth;
+/* CUSTOM ANIMATIONS */
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
 }
 
-html, 
+@keyframes spiral {
+    0% {
+        --angle: 0deg;
+    }
+    100% {
+        --angle: 360deg;
+    }
+}
+
+@keyframes lights {
+    0% {
+      color: hsl(230, 40%, 80%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.2),
+        0 0 0.125em hsla(320, 100%, 60%, 0.3),
+        -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+        1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+    }
+    
+    30% { 
+      color: hsl(230, 80%, 90%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 60%, 0.5),
+        -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+        0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    40% { 
+      color: hsl(230, 100%, 95%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 90%, 0.5),
+        -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+        0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    70% {
+      color: hsl(230, 80%, 90%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 60%, 0.5),
+        0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+        -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    100% {
+      color: hsl(230, 40%, 80%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.2),
+        0 0 0.125em hsla(320, 100%, 60%, 0.3),
+        1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+        -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+    } 
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { 
+        opacity: 0; 
+        display: none;
+    }
+  }
+
+/* UNIVERSAL STYLES */
+html {
+    scroll-behavior: smooth;    
+}
 body {
-    height: 100%;
-    color: #323232;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: hsl(230, 100%, 95%);
+    background: linear-gradient(135deg, hsl(230, 40%, 12%), hsl(230, 20%, 7%)); 
 }
 
 h1 {
+    width: 100%;
+    margin: auto;
     font-family: "Proza Libre", sans-serif;
-    margin: 0;
-    margin-bottom: 0.75em;
-    font-size: 2em;
+    font-size: 3.5rem;
+    font-weight: 300;
+    animation: lights 3s 750ms linear infinite;
 }
 
 h2 {
     font-family: "Proza Libre", sans-serif;
     margin: 0;
     margin-bottom: 0.75em;
-    font-size: 1.5em;
+    font-size: 3em;
 }
 
-.ital {
-    font-style: italic;
-    color: blue;
-}
-
-/* BODY */
-body {
-    font-family: "Open Sans", sans-serif;
-    margin: 0 auto;
-    padding: 0 1em;
-    max-width: 1000px;
-    display: flex;
-    flex-direction: column;
+p {
+    font-size: 1.25em;
 }
 
 section {
     padding: 1em 0;
+    margin-bottom: 3em;
 }
 
-/* HEADER-NAVIGATION */
-#logo {
-    margin: 0;
-    flex: 1;
-  }
+section:first-child {
+    padding: 0em;
+    margin-bottom: 0em;
+}
 
+/* BODY - HEADER*/
 header {
-    display: flex;
-    padding: 4em 0;
+    display: none;
+    padding: 2em 0em 0em 0em;
     flex-wrap: wrap;
+    justify-content: center;
     align-content: center;
+    width: 100%;
 }
 
-header nav{
+nav{
     display: flex;
-    align-items: center;
+    justify-content: center;
     width: 100%;
 }
 a {
-    color: #323232;
+    color: white;
     text-decoration: none;
     font-weight: 600;
   }
 
-ul .nav-items {
-    justify-self: right;
-}
-
 .nav-items {
+    width: 100%;
     display: flex;
     list-style-type: none;
     padding: 0;
-    justify-content: right;
-    align-items: center;
-    margin: 0 0 0 auto;
+    justify-content: space-between;
+    padding: 0 3em;
 }
 
 .nav-item {
     margin: 0.5em;
 }
 
-/* ABOUT ME */
+button {
+    border: 1px solid white;
+    border-radius: 20px;
+    background-color: #9483b81a;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #c3becd74;
+    border: 1px solid gold;
+}
+
+/* BODY - MAIN - GENERAL */
+main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+/* BODY - MAIN -> intro*/
+#intro {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+}
+
+.portfolio-name {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10em;
+}
+
+.spiral {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+}
+
+.character {
+    color: white;
+    font-size: 3.9em;
+    transform: translateY(calc(sin(var(--angle)) * 100px)) scale(calc(cos(var(--angle)) * 0.5 + 0.5));
+    animation: spiral 4s linear infinite;
+}
+
+.fade-in-text {
+    animation: fadeIn 5s;
+}
+
+.fade-out-text {
+    animation: fadeOut 2s;
+}
+
+/* BODY - MAIN -> about-me */
+#about-me {
+    display: none;
+    position: relative;
+}
+
 .moment {
     width: 300px;
     height: 80%;
     padding-top: 2em;
     flex-shrink: 0;
 }
-  
+
 .about-me-container {
     display: flex;
 }
@@ -109,10 +245,12 @@ ul .nav-items {
 .about-me-text-container li {
     padding-top: 1em;
     list-style: disc;
+    font-size: 1.2em;
 }
 
-/* PROJECTS */
+/* BODY - MAIN -> projects */
 #projects {
+    display: none;
     line-height: 1.4;
 }
 
@@ -135,13 +273,17 @@ details {
 }
 
 summary {
-    list-style-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/right-arrow.svg);
+    list-style: none;    
 }
 
 .project-description {
     padding-left: 2em;
 }
-/* Skills & Certifications */
+
+/* BODY - MAIN -> skills & certifications */
+#skills-certifications {
+    display: none;
+}
 .skills-container {
     display: flex;
     width: 100%;
@@ -179,24 +321,29 @@ summary {
 .cert-description i:hover {
     color: blueviolet;
 }
-/* EXPERIENCE */
+
+/* BODY - MAIN -> experience */
 #experience {
+    display: none;
     line-height: 1.4;
 }
 #experience p {
     padding-left: 2em;
 }
-/* CONTACT */
+
+/* BODY - MAIN -> contact */
+#contact {
+    display: none;
+}
+
 #contact p {
     font-family: "Open Sans", sans-serif;
     text-align: center;
     font-weight: bolder;
     padding-bottom: 1em;
 }
+
 /* FOOTER */
 footer {
-    margin-top: auto;
-    padding: 0.75em 0;
-    text-align: center;
+    display: none;
 }
-  
