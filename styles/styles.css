@@ -475,6 +475,10 @@ summary {
     padding-left: 2em;
 }
 
+#experience .experience-deets {
+    padding-left: 4em;
+}
+
 /* BODY - MAIN -> contact */
 #contact {
     display: none;

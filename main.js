@@ -21,6 +21,7 @@ setInterval(() => {
     timeContainer.innerText += " " + hours + " hours, ";
     timeContainer.innerText += " " + minutes + " minutes, ";
     timeContainer.innerText += " " + seconds + " seconds!";
+    timeContainer.style.color = "red";
 
 }, 1000);
 
