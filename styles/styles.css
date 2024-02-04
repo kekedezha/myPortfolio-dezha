@@ -169,12 +169,16 @@ button {
     border: 1px solid white;
     border-radius: 20px;
     background-color: #9483b81a;
-    font-size: 1em;
+    font-size: 1.25em;
+    color: white;
+    font-weight: 600;
+    padding: 0.5em;
 }
 
 button:hover {
     background-color: #c3becd74;
     border: 1px solid gold;
+    color: gold;
 }
 
 /* BODY - MAIN - GENERAL */
@@ -403,11 +407,16 @@ summary {
 #skills-certifications {
     display: none;
 }
+
+#skills-certifications h2 {
+    margin-bottom: 2em;
+}
 .skills-container {
     display: flex;
     width: 100%;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    margin-top: 2em;
 }
   
 .skills-container > * {
@@ -417,17 +426,15 @@ summary {
     margin-bottom: 1em;
 }
 
+.skills-container img {
+    width: 34px;
+    height: 34px;
+}
+
 .certification {
     padding-bottom: 1em;
     line-height: 1.6;
 }
-
-.cert-data {
-    padding-left: 2em;
-    padding-top: 0.5em;
-    width: 50%;
-    height: 500px;
-  }
   
 .cert-title h3 {
     display: inline;
@@ -435,6 +442,7 @@ summary {
 }
 
 .cert-description {
+    margin-top: 1em;
     padding-left: 2em;
 }
 
@@ -444,6 +452,10 @@ summary {
 
 .cert-description i:hover {
     color: blueviolet;
+}
+
+.certification-container {
+    margin-top: 4em;
 }
 
 /* BODY - MAIN -> experience */
@@ -473,6 +485,19 @@ summary {
     text-align: center;
     font-weight: bolder;
     padding-bottom: 1em;
+}
+
+/* BODY - MAIN -> extra */
+#extra {
+    display: none;
+}
+
+#extra h2 {
+    text-align: right;
+}
+
+#extra p {
+    text-align: center;
 }
 
 /* FOOTER */

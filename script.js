@@ -1,8 +1,3 @@
-//Word to be in helix animation
-const words = "C H R I S T I A N D E Z H A ' S P O R T F O L I O";
-
-const ANIMATION_DURATION = 2000; //ms
-
 //document element selectors
 const headerComponent = document.querySelector("header");
 const welcomeDiv = document.querySelector(".welcome");
@@ -12,28 +7,19 @@ const projectsSection = document.getElementById("projects");
 const skillsSection = document.getElementById("skills-certifications");
 const experienceSection = document.getElementById("experience")
 const contactSection = document.getElementById("contact");
+const extraSection = document.getElementById("extra");
 const footerSection = document.querySelector("footer");
 const giftFairyWebsiteButton = document.querySelector(".giftfairy-website-button");
 const giftFairyGithubButton = document.querySelector(".giftfairy-github-button");
 const jammingGithubButton = document.querySelector(".jamming-github-button");
 const trhWebsiteButton = document.querySelector(".trh-website-button");
 const trhGithubButton = document.querySelector(".trh-github-button");
-
-
-//Function to separate each character into it's own div
-const characters = words.split("").forEach((char, i) => {
-    function createElement(offset) {
-        const div = document.createElement("div");
-        div.innerText = char;
-        div.classList.add("character");
-        div.style.animationDelay= `${i * (ANIMATION_DURATION / 20) - offset}ms`
-        return div;
-    }
-
-    document.getElementById("spiral").append(createElement(0));
-    document.getElementById("spiral2").append(createElement(-1 * (4000 / 2)));
-});
-
+const aboutButton = document.querySelector(".about-button");
+const projectsButton = document.querySelector(".projects-button");
+const skillsButton = document.querySelector(".skills-button");
+const experienceButton = document.querySelector(".experience-button");
+const contactButton = document.querySelector(".contact-button");
+const extraButton = document.querySelector(".extra-button");
 
 //Interval set up to display "welcome" message for 3 seconds on page load/reload
 const interval1 = setInterval(() => {
@@ -51,6 +37,7 @@ const interval2 = setInterval(() => {
     skillsSection.style.display = "block";
     experienceSection.style.display = "block"
     contactSection.style.display = "block";
+    extraSection.style.display = "block";
     footerSection.style.display = "block";
     portfolioNameDiv.classList.add("fade-in-text");
     headerComponent.classList.add("fade-in-text");
@@ -77,8 +64,38 @@ const trhGoToGithub = () => {
     window.open("https://github.com/kekedezha/TRHFilms", "_blank");
 }
 
+const goToAboutSection = () => {
+    location.href = "#about-me";
+}
+
+const goToProjectsSection = () => {
+    location.href = "#projects";
+}
+
+const goToSkillsSection = () => {
+    location.href = "#skills-certifications";
+}
+
+const goToExperienceSection = () => {
+    location.href = "#experience";
+}
+
+const goToContactSection = () => {
+    location.href = "#contact";
+}
+
+const goToExtraSection = () => {
+    location.href = "#extra";
+}
+
 giftFairyWebsiteButton.onclick = gfGoToWebsite;
 giftFairyGithubButton.onclick = gfGoToGithub;
 jammingGithubButton.onclick = jammingGoToGithub;
 trhWebsiteButton.onclick = trhGoToWebsite;
 trhGithubButton.onclick = trhGoToGithub;
+aboutButton.onclick = goToAboutSection;
+projectsButton.onclick = goToProjectsSection;
+skillsButton.onclick = goToSkillsSection;
+experienceButton.onclick = goToExperienceSection;
+contactButton.onclick = goToContactSection;
+extraButton.onclick = goToExtraSection;
