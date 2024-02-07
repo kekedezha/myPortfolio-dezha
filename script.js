@@ -49,7 +49,7 @@ const gfGoToWebsite = () => {
 }
 
 const gfGoToGithub = () => {
-    window.open("https://github.com/kekedezha/GiftFairy-FE", "_blank");
+    window.open("https://github.com/kekedezha/GIFTFaiRY_FE", "_blank");
 }
 
 const jammingGoToGithub = () => {
