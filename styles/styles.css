@@ -84,6 +84,28 @@ to {
 }
 }
 
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(150%);
+    } 
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    } 
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-150%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 /* UNIVERSAL STYLES */
 html {
     scroll-behavior: smooth;    
@@ -128,6 +150,16 @@ section {
 section:first-child {
     padding: 0em;
     margin-bottom: 0em;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .slideLeft {
+        animation: slideInLeft 3s 1;
+    }
+
+    .slideRight {
+        animation: slideInRight 3s 1;
+    }
 }
 
 /* BODY - HEADER*/
