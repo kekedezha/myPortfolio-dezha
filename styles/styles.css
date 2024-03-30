@@ -118,8 +118,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: hsl(230, 100%, 95%);
-    background: linear-gradient(135deg, hsl(230, 40%, 12%), hsl(230, 20%, 7%)); 
+    /* color: hsl(230, 100%, 95%); */
+    color: #343b4e;
+    /* background: linear-gradient(135deg, hsl(230, 40%, 12%), hsl(230, 20%, 7%));  */
+    background: #e6eaf8;
 }
 
 h1 {
@@ -178,7 +180,7 @@ nav{
     width: 100%;
 }
 a {
-    color: white;
+    color: #343b4e;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.25em;
@@ -202,7 +204,7 @@ button {
     border-radius: 20px;
     background-color: #9483b81a;
     font-size: 1.25em;
-    color: white;
+    color: #343b4e;
     font-weight: 600;
     padding: 0.5em;
 }
@@ -247,7 +249,7 @@ main {
 }
 
 .character {
-    color: white;
+    color: #343b4e;
     font-size: 3.9em;
     transform: translateY(calc(sin(var(--angle)) * 100px)) scale(calc(cos(var(--angle)) * 0.5 + 0.5));
     animation: spiral 4s linear infinite;
@@ -461,6 +463,10 @@ summary {
 .skills-container img {
     width: 34px;
     height: 34px;
+}
+
+.skills-img {
+    background-color: #343b4e;
 }
 
 .certification {
